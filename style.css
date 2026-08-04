@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f8f3ea;
+    color:#5b4636;
+    padding:20px;
+}
+
+.container{
+    max-width:700px;
+    margin:auto;
+    background:white;
+    border-radius:28px;
+    padding:35px;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+}
+
+.names{
+    font-family:'Great Vibes',cursive;
+    font-size:58px;
+    text-align:center;
+    color:#8b5e3c;
+}
+
+.date{
+    text-align:center;
+    margin-top:8px;
+    font-size:22px;
+    color:#9a7655;
+    font-weight:600;
+}
+
+.invitation{
+    width:100%;
+    margin:30px 0;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+}
+
+.invitation img{
+    width:100%;
+    display:block;
+}
+
+.message{
+    text-align:center;
+    font-size:18px;
+    line-height:1.8;
+    margin-bottom:30px;
+    color:#6b5847;
+}
+
+label{
+    display:block;
+    margin:18px 0 8px;
+    font-weight:600;
+}
+
+input[type=file],
+textarea{
+    width:100%;
+    border:2px solid #e8d9c6;
+    border-radius:14px;
+    padding:15px;
+    background:#fffdf9;
+    font-size:16px;
+}
+
+textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+button{
+    width:100%;
+    margin-top:25px;
+    padding:18px;
+    border:none;
+    border-radius:15px;
+    background:linear-gradient(135deg,#b88b5c,#8d6039);
+    color:white;
+    font-size:19px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 20px rgba(0,0,0,.15);
+}
+
+.progress{
+    display:none;
+    width:100%;
+    background:#eee;
+    border-radius:50px;
+    margin-top:20px;
+    overflow:hidden;
+}
+
+.progress-bar{
+    width:0%;
+    height:12px;
+    background:#b88b5c;
+}
+
+.footer{
+    text-align:center;
+    margin-top:35px;
+    color:#8d7258;
+    font-size:14px;
+}
+
+@media(max-width:600px){
+
+.container{
+padding:20px;
+}
+
+.names{
+font-size:46px;
+}
+
+.date{
+font-size:19px;
+}
+
+.message{
+font-size:17px;
+}
+
+button{
+font-size:18px;
+}
+
+}
