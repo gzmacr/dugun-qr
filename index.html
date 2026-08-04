@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Düğün Fotoğraf Paylaşımı</title>
+<style>
+body{font-family:Arial,sans-serif;background:#faf6ef;display:flex;justify-content:center;align-items:center;min-height:100vh;margin:0}
+.card{background:#fff;padding:30px;border-radius:18px;max-width:420px;width:92%;box-shadow:0 10px 30px rgba(0,0,0,.12);text-align:center}
+h1{color:#9c7a35} button{padding:16px;width:100%;border:none;border-radius:10px;background:#b9933f;color:#fff;font-size:18px}
+small{display:block;margin-top:16px;color:#777}
+progress{width:100%;display:none;margin-top:15px}
+</style>
+</head>
+<body>
+<div class="card">
+<h1>💍 Merve & Ahmet</h1>
+<p>Anılarınızı bizimle paylaşın ❤️</p>
+<input id="files" type="file" accept="image/*" multiple style="display:none">
+<button onclick="pick()">📷 Fotoğraf Seç / Çek</button>
+<progress id="bar" max="100" value="0"></progress>
+<div id="msg"></div>
+<small>Teşekkür ederiz 🤍</small>
+</div>
+<script>
+const cloud="jsdnxrkh";
+const preset="dugun8826";
+const input=document.getElementById("files");
+const bar=document.getElementById("bar");
+const msg=document.getElementById("msg");
+function pick(){input.click();}
+input.onchange=async()=>{
+ const files=[...input.files];
+ if(!files.length)return;
+ bar.style.display="block";
+ let done=0;
+ for(const f of files){
+   const fd=new FormData();
+   fd.append("file",f);
+   fd.append("upload_preset",preset);
+   await fetch(`https://api.cloudinary.com/v1_1/${cloud}/image/upload`,{method:"POST",body:fd});
+   done++;
+   bar.value=done/files.length*100;
+ }
+ msg.innerHTML="<h3>❤️ Fotoğraflar başarıyla yüklendi.</h3>";
+};
+</script>
+</body>
+</html>
