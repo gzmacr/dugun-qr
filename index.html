@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#b27a4a">
+  <title>Gizem & Görkem | Düğün Anıları</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <section class="card">
+      <div class="ornament">♥</div>
+
+      <h1>Gizem &amp; Görkem</h1>
+      <div class="date">08.08.2026</div>
+
+      <div class="invite-wrap">
+        <img src="assets/davetiye.png" alt="Gizem & Görkem düğün davetiyesi" class="invite">
+      </div>
+
+      <div class="intro">
+        <p class="welcome">Birlikte biriktirdiğimiz bu güzel anılara<br>
+        sizin gözünüzden de bir kare eklemek ister misiniz?</p>
+        <p class="sub">Düğünümüzde çektiğiniz fotoğraf ve videoları bizimle paylaşabilirsiniz. 🤍</p>
+      </div>
+
+      <form id="uploadForm">
+        <label class="field-title" for="media">📸 Fotoğraf veya Video Paylaş</label>
+
+        <label class="file-box" for="media">
+          <span class="file-icon">＋</span>
+          <span class="file-main">Fotoğraf veya Video Seç</span>
+          <span class="file-help">Birden fazla dosya seçebilirsiniz</span>
+        </label>
+        <input id="media" type="file" accept="image/*,video/*" multiple>
+
+        <div id="fileList" class="file-list"></div>
+
+        <label class="field-title note-title" for="note">💌 İsterseniz bize küçük bir not bırakabilirsiniz</label>
+        <textarea id="note" rows="4" maxlength="500" placeholder="Mesajınızı buraya yazabilirsiniz..."></textarea>
+
+        <button id="submitBtn" type="submit">🤍 Anılarımızı Gönder</button>
+
+        <div class="progress-wrap" id="progressWrap" hidden>
+          <div class="progress-track">
+            <div id="progressBar" class="progress-bar"></div>
+          </div>
+          <div id="progressText" class="progress-text">Hazırlanıyor...</div>
+        </div>
+
+        <div id="status" class="status" role="status" aria-live="polite"></div>
+      </form>
+
+      <p class="footer">Sevginizi ve güzel anılarınızı bizimle paylaştığınız için teşekkür ederiz. 🤍</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
